@@ -197730,7 +197730,7 @@ ${x}`;
                                 { key: "UNFOLLOW_DAILY_LIMIT_OVERRIDE", instance: i },
                                 null
                             ),
-                            A = !0 /* ENABLE_DEV_LIMIT_OVERRIDE: private dev build only */,
+                            A = () => !!globalThis.__TW_DEV_LIMITS_BUILD__,
                             B = "UNFOLLOW_TRAIL_COUNT" === e ? H : r,
                             j = (e) => {
                                 let t = Number(e);
@@ -197738,8 +197738,10 @@ ${x}`;
                             },
                             F = () => {
                                 if ("UNFOLLOW_TRAIL_COUNT" !== e) return t();
-                                let r = A ? j(y()) : null;
-                                return r ?? j(C()) ?? t();
+                                let r = A() && globalThis.__TW_DEV_LIMITS__?.enabled
+                                    ? j(globalThis.__TW_DEV_LIMITS__.dailyLimit)
+                                    : null;
+                                return r ?? j(y()) ?? j(C()) ?? t();
                             },
                             b = c || h || v || m || M || V || L,
                             w = () => u(0);

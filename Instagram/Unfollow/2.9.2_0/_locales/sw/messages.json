@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Auto unfollow tool for IG that detects non-followers instantly. Batch unfollow with whitelist protection for efficient account cleanup."
+   },
+   "extensionName": {
+      "message": "Auto Unfollow Tool for IG"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

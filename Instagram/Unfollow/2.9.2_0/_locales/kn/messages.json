@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Mass unfollow assistant for IG that detects who doesn't follow back. Save time with automated bulk cleanup actions."
+   },
+   "extensionName": {
+      "message": "IG Mass Unfollower Assistant"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Manage your Instagram following list with bulk unfollow. Detect who doesn't follow back and clean up with one-click actions."
+   },
+   "extensionName": {
+      "message": "Instagram Follower Cleanup Manager"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

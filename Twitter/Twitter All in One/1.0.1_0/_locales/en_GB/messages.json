@@ -1,0 +1,10 @@
+{
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "Easily follow and unfollow users on Twitter X with this extension."
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "Auto Follow Unfollow for Twitter X"
+   }
+}

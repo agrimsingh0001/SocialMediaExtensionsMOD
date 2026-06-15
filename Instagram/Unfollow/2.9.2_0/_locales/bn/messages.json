@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Automatically unfollow Instagram users who don't follow you back. Smart follower audit tool that saves hours of manual work."
+   },
+   "extensionName": {
+      "message": "Auto Unfollow for Instagram"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Auto unfollow accounts on Instagram that ignore you. Batch processing with whitelist protection for safe follower management."
+   },
+   "extensionName": {
+      "message": "Auto Unfollow IG Manager"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

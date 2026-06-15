@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Bulk unfollow manager for Instagram with automated scanning. Detect non-followers, protect favorites, and clean your list fast."
+   },
+   "extensionName": {
+      "message": "Instagram Bulk Unfollow Manager"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

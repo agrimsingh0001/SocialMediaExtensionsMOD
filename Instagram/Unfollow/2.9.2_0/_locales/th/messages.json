@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Manage and bulk unfollow Instagram accounts with smart automation. Non-follower detection and one-click batch removal built in."
+   },
+   "extensionName": {
+      "message": "Bulk IG Follower Manager Tool"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

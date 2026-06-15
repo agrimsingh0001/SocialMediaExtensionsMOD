@@ -1,0 +1,36 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icon128.plasmo.3c1ed2d2.png",
+         "16": "icon16.plasmo.6c567d50.png",
+         "32": "icon32.plasmo.76b92899.png",
+         "48": "icon48.plasmo.aced7582.png",
+         "64": "icon64.plasmo.8bb5e6e0.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "author": "yue_ban",
+   "background": {
+      "service_worker": "static/background/index.js"
+   },
+   "default_locale": "en",
+   "description": "__MSG_extDescription__",
+   "host_permissions": [ "*://*.twitter.com/*", "*://*.x.com/*" ],
+   "icons": {
+      "128": "icon128.plasmo.3c1ed2d2.png",
+      "16": "icon16.plasmo.6c567d50.png",
+      "32": "icon32.plasmo.76b92899.png",
+      "48": "icon48.plasmo.aced7582.png",
+      "64": "icon64.plasmo.8bb5e6e0.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAry9924qs+2m7BdYaLMfk4PIcX3ar6qP1EHQ8Xle2Fv123LMvW6JekCkJrMyXPdRCSigiVZmxoJn+hVBNI8Q6lOsVl2Y3zHrOj00FxyXlTe2gdz6siaO9Szj+cLOx1Wvf0mdq1Nvs6op9NXaCqKkLiwTCeABXON/NPswWTAEiCokUxbeA4kOcKNZJkS4ypatXq/RvwVIOHWKG9q0Asa6TvfOnKb6+uddXTeK/J+slUIWdaUUJfpAWksiblXL0oq48ms3FvG3abAE4SFzDyD1EhcNt49KsQh8lfCOWjlKu7DjZ7gIoCPzkX/fFmFXRa4awG6qEYbPLfP+tvsXPjK6vGQIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_extName__",
+   "oauth2": {
+      "client_id": "1050884950815-svrnbf5ojdbd8q26s622urnlqrca92t6.apps.googleusercontent.com",
+      "scopes": [ "openid", "email", "profile" ]
+   },
+   "permissions": [ "cookies", "storage", "identity", "alarms" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.1.0"
+}

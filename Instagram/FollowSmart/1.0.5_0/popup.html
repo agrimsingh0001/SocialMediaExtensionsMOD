@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IG Auto-Follow</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>IG <span>Auto</span></h1>
+      <div class="header-controls">
+        <select id="language-select" class="language-select">
+          <option value="pt-BR">🇧🇷 PT</option>
+          <option value="en">🇺🇸 EN</option>
+        </select>
+        <div id="status-indicator" class="status-dot"></div>
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="automation" title="Automação">🚀</button>
+      <button class="tab-btn" data-tab="unfollow" title="Unfollow">🧹</button>
+      <button class="tab-btn" data-tab="premium" title="Premium">💎</button>
+      <button class="tab-btn" data-tab="settings" title="Configurações">⚙️</button>
+      <button class="tab-btn" data-tab="about" title="Sobre">ℹ️</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="automation-tab" class="tab-content active">
+      <div class="card">
+        <h2 class="tab-title" data-i18n="automationTitle">Auto Follow (and Like) commenters on a post</h2>
+        <div class="instructions">
+          <p data-i18n="howToUse"></p>
+          <p data-i18n="settings">⚙️ Configure o limite de usuários e se quer dar like em fotos aleatórias.</p>
+        </div>
+
+        <div class="input-group">
+          <label for="user-limit" data-i18n="followLimit"></label>
+          <input type="number" id="user-limit" value="10" min="1" max="100">
+        </div>
+
+        <div class="input-group">
+          <label class="checkbox-container">
+            <input type="checkbox" id="like-random" checked>
+            <span class="checkmark"></span>
+            <span data-i18n="likeRandomPhoto">Like 1 random photo</span>
+          </label>
+        </div>
+
+        <!-- Account Status for Automation -->
+        <div id="automation-account-status" class="account-status">
+          <div class="follows-info">
+            <span class="follows-label" data-i18n="followsRemainingToday">Follows restantes hoje:</span>
+            <span id="automation-remaining-follows" class="follows-value">10</span>
+          </div>
+          <div id="automation-reset-info" class="reset-info">
+            <span data-i18n="limitResetsAt">Limite reseta em:</span>
+            <span id="automation-reset-time" class="reset-time"></span>
+          </div>
+          <p class="premium-hint" data-i18n="buyUnlimitedDays">💡 Você pode comprar dias de uso ilimitado na aba Premium
+          </p>
+        </div>
+
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-label" data-i18n="processed"></span>
+            <span id="stat-count" class="stat-value">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label" data-i18n="skipped"></span>
+            <span id="stat-skipped" class="stat-value">0</span>
+          </div>
+        </div>
+
+        <div class="stats total-stats">
+          <div class="stat-item">
+            <span class="stat-label" data-i18n="totalProcessed"></span>
+            <span id="stat-total-processed" class="stat-value">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label" data-i18n="totalSkipped"></span>
+            <span id="stat-total-skipped" class="stat-value">0</span>
+          </div>
+        </div>
+
+
+        <div class="controls">
+          <button id="start-btn" class="btn primary" data-i18n="startAutomation" data-premium-tooltip=""></button>
+          <button id="stop-btn" class="btn secondary" disabled data-i18n="stop"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="unfollow-tab" class="tab-content">
+      <div class="card">
+        <h2 class="tab-title" data-i18n="unfollowTitle">Auto Unfollow</h2>
+
+        <div class="instructions" data-i18n="unfollowInstructions">
+          📱 <strong>Como usar:</strong> Clique no seu número de "Seguindo" no seu perfil e depois em "Iniciar Unfollow"
+          para deixar de seguir os perfis da lista.
+        </div>
+
+        <div class="settings-group">
+          <div class="setting-item">
+            <label for="unfollow-limit" data-i18n="unfollowLimit">Limite de Unfollows</label>
+            <input type="number" id="unfollow-limit" min="1" max="200" value="10" class="setting-input">
+          </div>
+        </div>
+
+        <div class="account-status">
+          <div class="follows-info">
+            <span class="follows-label" data-i18n="unfollowsRemaining">Unfollows restantes hoje:</span>
+            <span id="unfollow-remaining-actions" class="follows-value">10</span>
+          </div>
+          <div id="unfollow-reset-info" class="reset-info">
+            <span data-i18n="limitResetsAt">Limite reseta em:</span>
+            <span id="unfollow-reset-time" class="reset-time">00:00</span>
+          </div>
+          <p class="premium-hint" data-i18n="buyUnlimitedDays">💡 Você pode comprar dias de uso ilimitado na aba Premium
+          </p>
+        </div>
+
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-label" data-i18n="processed">Processados</div>
+            <div id="unfollow-stat-count" class="stat-value">0</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label" data-i18n="skipped">Ignorados</div>
+            <div id="unfollow-stat-skipped" class="stat-value">0</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="unfollow-start-btn" class="btn primary" data-i18n="startUnfollow"></button>
+          <button id="unfollow-stop-btn" class="btn secondary" disabled data-i18n="stop"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Premium Tab -->
+    <div id="premium-tab" class="tab-content">
+      <div class="card">
+        <h2 class="tab-title" data-i18n="premiumTabTitle">Premium Plans</h2>
+
+        <div id="premium-account-status" class="account-status">
+          <div class="plan-info">
+            <span class="plan-label" data-i18n="planLabel">Plano:</span>
+            <span id="premium-current-plan" class="plan-value" data-i18n="planFree">Grátis</span>
+          </div>
+          <div id="premium-expiry" class="premium-expiry" style="display: none;">
+            <span class="expiry-label" data-i18n="premiumUntil">Premium até:</span>
+            <span id="premium-expiry-date" class="expiry-value"></span>
+          </div>
+        </div>
+
+        <div id="premium-upgrade-section" class="upgrade-section">
+          <div class="activation-code">
+            <input type="text" id="premium-activation-code" data-i18n-placeholder="activationCodePlaceholder"
+              class="code-input">
+            <button id="premium-activate-btn" class="btn small" data-i18n="activateBtn">Ativar</button>
+          </div>
+
+          <div class="plans">
+            <button class="plan-btn" data-plan="1day" data-price="$0.49">
+              <span class="plan-name" data-i18n="plan1Day">1 Dia</span>
+              <span class="plan-price">$0.49</span>
+            </button>
+            <button class="plan-btn" data-plan="5day" data-price="$1.99">
+              <span class="plan-name" data-i18n="plan5Days">5 Dias</span>
+              <span class="plan-price">$1.99</span>
+            </button>
+            <button class="plan-btn" data-plan="10day" data-price="$3.49">
+              <span class="plan-name" data-i18n="plan10Days">10 Dias</span>
+              <span class="plan-price">$3.49</span>
+            </button>
+            <button class="plan-btn" data-plan="30day" data-price="$9.99">
+              <span class="plan-name" data-i18n="plan30Days">30 Dias</span>
+              <span class="plan-price">$9.99</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings Tab -->
+    <div id="settings-tab" class="tab-content">
+      <div class="card">
+        <div class="settings-content">
+          <div class="settings-section">
+            <h3 data-i18n="settingsTitle">Configurações</h3>
+
+            <div class="setting-item">
+              <label for="follow-private" class="setting-label">
+                <input type="checkbox" id="follow-private" class="setting-checkbox">
+                <span data-i18n="followPrivateAccounts">Seguir perfis privados</span>
+              </label>
+              <p class="setting-description" data-i18n="followPrivateDescription">
+                Se desabilitado, o robô irá pular perfis privados automaticamente.
+              </p>
+            </div>
+
+            <div class="setting-item">
+              <label for="action-delay" class="setting-label" data-i18n="actionDelay">Delay entre ações
+                (segundos):</label>
+              <input type="number" id="action-delay" class="setting-input" min="5" max="60" value="15">
+              <p class="setting-description" data-i18n="actionDelayDescription">
+                Tempo de espera entre cada ação (seguir, dar like, etc.). Valor padrão: 15 segundos.
+              </p>
+            </div>
+
+            <div class="setting-item">
+              <label for="max-followers" class="setting-label" data-i18n="maxFollowers">Max. Seguidores</label>
+              <input type="number" id="max-followers" class="setting-input" value="1000" min="0">
+              <p class="setting-description" data-i18n="maxFollowersDescription">
+                Não seguir usuários com mais de X seguidores (Premium).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Tab -->
+    <div id="about-tab" class="tab-content">
+      <div class="card">
+        <div class="about-content">
+          <div class="about-section">
+            <h3 data-i18n="aboutTitle">Sobre o IG Auto-Follow</h3>
+            <p data-i18n="aboutDescription">
+              Extensão gratuita para Chrome que automatiza seu engajamento no Instagram,
+              seguindo perfis que comentaram em seus posts e aumentando sua visibilidade organicamente.
+            </p>
+          </div>
+
+          <div class="about-section">
+            <h4 data-i18n="featuresTitle">Funcionalidades</h4>
+            <ul>
+              <li data-i18n="featureSmartAI">🤖 IA inteligente para detectar comentários legítimos</li>
+              <li data-i18n="featureMultiLanguage">🌐 Suporte completo em português e inglês</li>
+              <li data-i18n="featureAnalytics">📊 Analytics detalhado em tempo real</li>
+              <li data-i18n="featureSafe">🔒 Totalmente seguro e respeita os termos do Instagram</li>
+            </ul>
+          </div>
+
+          <div class="about-section">
+            <h4 data-i18n="linksTitle">Links Úteis</h4>
+            <div class="links-grid">
+              <a href="https://falconapps.org/extension-ig-auto-follow" target="_blank" class="link-item">
+                📖 <span data-i18n="websiteLink">Site Oficial</span>
+              </a>
+              <a href="https://falconapps.org/extension-ig-auto-follow/privacy" target="_blank" class="link-item">
+                🔒 <span data-i18n="privacyLink">Política de Privacidade</span>
+              </a>
+              <a href="https://chromewebstore.google.com/detail/ig-auto-follow-like/dpofpdnejpmhdpdnnkmjhkppolgejikp"
+                target="_blank" class="link-item">
+                📥 <span data-i18n="updateLink">Verificar Atualizações</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="about-section">
+            <h4 data-i18n="developedByTitle">Desenvolvido por</h4>
+            <p>
+              <strong>Falcon Serviços de TI e IA</strong><br>
+              <span data-i18n="developedByDesc">Soluções tecnológicas para o seu negócio</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="log-container" class="log-container">
+      <p class="log-placeholder" data-i18n="ready"></p>
+    </div>
+
+    <footer>
+      <p id="current-task" data-i18n="idle"></p>
+    </footer>
+  </div>
+  <script src="i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Smart auto unfollow assistant for Instagram. Scan for non-followers, bulk remove accounts, and protect your whitelist safely."
+   },
+   "extensionName": {
+      "message": "IG Auto Unfollow Assistant"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

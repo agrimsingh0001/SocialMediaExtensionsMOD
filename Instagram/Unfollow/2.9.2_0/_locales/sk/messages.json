@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Auto unfollower for Instagram with bulk removal features. Detect accounts that don't follow back and clean up in one click."
+   },
+   "extensionName": {
+      "message": "Instagram Auto Unfollower"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

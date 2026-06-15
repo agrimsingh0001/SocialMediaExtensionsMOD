@@ -1,0 +1,34 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "public/icon128.png",
+         "16": "public/icon16.png",
+         "48": "public/icon48.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "js": [ "i18n.js", "content.js" ],
+      "matches": [ "*://*.instagram.com/*" ]
+   } ],
+   "description": "Automate Instagram follows and likes for commenters on a post.",
+   "host_permissions": [ "*://*.instagram.com/*", "https://falconbot.duckdns.org/*" ],
+   "icons": {
+      "128": "public/icon128.png",
+      "16": "public/icon16.png",
+      "48": "public/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt0cTrDEsn3AMwto09shT3IRA73GH+u4MmbynxKNqT77WgFFG4sesZvkdUoohcg7MOKOn4DV0ZD2NO4a1b6a0AM8EaNvorrTBbNypstBI8yKuRuRdmVSy2tQcddvsADljROVzpSfEaEawKG1lkbuzcyUIhhJ0n9QWS0KfmCtHC7bR3Um4GJfahyhVsPnPg9evbonGGMH+k716S+N65/HarQCaxdWBIqWLx6fmCg5W4QgDoTqKWM4OiJTa44UzmoftYl9mEkTMrMx7TuzFFRIUDlTc9+hgZ+eItcu3MbVnume8HDP3W19Yv0sNxEzLTgIAVV6dlrj8yvri82gROzhvQwIDAQAB",
+   "manifest_version": 3,
+   "name": "IG Auto-Follow & Like from Post Comments",
+   "permissions": [ "storage", "tabs", "scripting" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.5",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "monetization.js" ]
+   } ]
+}

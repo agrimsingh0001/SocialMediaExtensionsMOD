@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Manage Instagram followers with bulk unfollow and non-follower detection. Efficient automation tool for a cleaner following list."
+   },
+   "extensionName": {
+      "message": "Instagram Follower Manager Tool"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

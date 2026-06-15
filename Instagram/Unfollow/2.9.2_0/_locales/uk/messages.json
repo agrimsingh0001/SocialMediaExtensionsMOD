@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Auto unfollow manager tool for Instagram with bulk non-follower detection. Save time with automated batch cleanup and whitelist."
+   },
+   "extensionName": {
+      "message": "IG Auto Unfollow Manager Tool"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

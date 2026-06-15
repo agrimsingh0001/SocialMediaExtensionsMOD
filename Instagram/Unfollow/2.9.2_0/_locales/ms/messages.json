@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Auto bulk unfollow tool for Instagram with smart detection. Find who doesn't follow back and remove them securely in batches."
+   },
+   "extensionName": {
+      "message": "Auto IG Bulk Unfollow Tool"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Instagram follower cleanup assistant with mass unfollow capability. Find unfollowers quickly and remove them safely in bulk."
+   },
+   "extensionName": {
+      "message": "IG Follower Cleanup Assistant"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Mass unfollow Instagram accounts that don't follow you back. Detect non-followers and clean your list in seconds."
+   },
+   "extensionName": {
+      "message": "Instagram Mass Unfollow Manager"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

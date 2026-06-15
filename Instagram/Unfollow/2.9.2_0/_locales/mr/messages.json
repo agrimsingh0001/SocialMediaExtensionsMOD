@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Your Instagram unfollow assistant that finds non-followers automatically. Bulk actions make follower cleanup quick and effortless."
+   },
+   "extensionName": {
+      "message": "Instagram Unfollow Assistant"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

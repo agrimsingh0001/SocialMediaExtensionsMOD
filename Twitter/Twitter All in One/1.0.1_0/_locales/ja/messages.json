@@ -1,0 +1,10 @@
+{
+   "extDescription": {
+      "description": "Description of the extension",
+      "message": "自動フォロー・アンフォローの成長戦略でTwitter/Xのフォロワーを増やす."
+   },
+   "extName": {
+      "description": "Name of the extension",
+      "message": "Twitter自動フォロー・アンフォロー"
+   }
+}

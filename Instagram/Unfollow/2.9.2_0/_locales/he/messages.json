@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Unfollow Instagram users in bulk with smart non-follower detection. Secure and efficient follower cleanup for any account size."
+   },
+   "extensionName": {
+      "message": "Instagram Bulk Unfollower"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

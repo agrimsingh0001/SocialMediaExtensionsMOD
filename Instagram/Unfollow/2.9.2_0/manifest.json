@@ -1,0 +1,32 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icon128.plasmo.3c1ed2d2.png",
+         "16": "icon16.plasmo.6c567d50.png",
+         "32": "icon32.plasmo.76b92899.png",
+         "48": "icon48.plasmo.aced7582.png",
+         "64": "icon64.plasmo.8bb5e6e0.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "author": "Plasmo Corp. \u003Cfoss@plasmo.com>",
+   "background": {
+      "service_worker": "static/background/index.js"
+   },
+   "default_locale": "en",
+   "description": "__MSG_extensionDescription__",
+   "host_permissions": [ "*://*.instagram.com/*" ],
+   "icons": {
+      "128": "icon128.plasmo.3c1ed2d2.png",
+      "16": "icon16.plasmo.6c567d50.png",
+      "32": "icon32.plasmo.76b92899.png",
+      "48": "icon48.plasmo.aced7582.png",
+      "64": "icon64.plasmo.8bb5e6e0.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs5q4ADxborVFIqqtdgXf3msrlZIBgyK3WyitDbYyn4OKe7YNGnJfED+aw3Zdb6U1WTFZ5+9cpXyrW1sWLYIFD2LPPsww1O/lAj+nfNVVbl+OrNgFOo8z90FyLgSh43iM+h+/zeNZ28bBn9VeaAagw2TLdGnKLcmwa9n4vjPF37rxm0XlftJqXJhrEoECI6CKVYxk0ccdZtev9D5M2NLDYsIvqKTX15H+i2BS53uHwRlp+YDO0vC5Pa+Xm4W2kN28a4Bw5w2jQWtaUiy1W47qCIzNhFJ540ap3e1Hy9eO2pPncPdf1IRu865OCbuz2uJg5ubZAyJWprzv/6UOFrj8ZQIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_extensionName__",
+   "permissions": [ "storage", "tabs", "cookies", "unlimitedStorage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.9.2"
+}

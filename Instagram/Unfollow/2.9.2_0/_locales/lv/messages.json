@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Clean up your Instagram account by bulk unfollowing non-followers. Fast follower audit with one-click removal and whitelist."
+   },
+   "extensionName": {
+      "message": "Instagram Account Cleanup Tool"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

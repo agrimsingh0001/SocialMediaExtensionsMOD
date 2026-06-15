@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Smart unfollow manager for Instagram with non-follower scanning. Bulk remove unfollowers while keeping your favorites protected."
+   },
+   "extensionName": {
+      "message": "Smart IG Unfollow Manager"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

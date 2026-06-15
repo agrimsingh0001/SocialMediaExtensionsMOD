@@ -1,0 +1,12 @@
+{
+   "extensionDescription": {
+      "message": "Bulk unfollow automation for Instagram accounts. Scan for unfollowers, remove non-followers, and streamline your follower list."
+   },
+   "extensionName": {
+      "message": "Bulk IG Unfollow Automation"
+   },
+   "extensionNameInExt": {
+      "description": "Extension name",
+      "message": "Unfollow Pro"
+   }
+}

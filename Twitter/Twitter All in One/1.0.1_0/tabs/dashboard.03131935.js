@@ -66460,6 +66460,7 @@ class r_ {
         ph(this), (this.userConfigStore = new e_());
     }
     async tryLaunch() {
+        await import("/dev-limits.js").catch(() => {});
         await q8(300);
         var a = new URLSearchParams(window.location.search);
         const e = a.get("history-view");
@@ -66483,7 +66484,6 @@ class r_ {
                           globalThis.__TW_DEV_LIMITS__?.enabled === !0 &&
                           Number.isInteger(globalThis.__TW_DEV_LIMITS__.dailyLimit) &&
                           globalThis.__TW_DEV_LIMITS__.dailyLimit > 0 &&
-                          globalThis.__TW_DEV_LIMITS__.dailyLimit <= 500 &&
                           (this.perDayLimitCount = globalThis.__TW_DEV_LIMITS__.dailyLimit),
                       o.enableAutoFollowBlacklist && o.selectedActionType === m4.Follow
                           ? L5.get(Fy).then((h) => {
@@ -67096,6 +67096,12 @@ class r_ {
         this.doneUsers.unshift(a);
     };
     checkPerDayLimitCount = async () => {
+        await import("/dev-limits.js").catch(() => {});
+        globalThis.__TW_DEV_LIMITS_BUILD__ === !0 &&
+            globalThis.__TW_DEV_LIMITS__?.enabled === !0 &&
+            Number.isInteger(globalThis.__TW_DEV_LIMITS__.dailyLimit) &&
+            globalThis.__TW_DEV_LIMITS__.dailyLimit > 0 &&
+            (this.perDayLimitCount = globalThis.__TW_DEV_LIMITS__.dailyLimit);
         if (this.userConfigStore.userInfo?.isPro) return !0;
         const a = `perDayCount-${this.workingBot?.selectedActionType}`,
             e = qe(new Date(), "yyyy-MM-dd"),

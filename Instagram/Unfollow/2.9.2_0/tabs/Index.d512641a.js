@@ -197722,7 +197722,26 @@ ${x}`;
                                 { key: "HAS_SHOWED_RATING_PROMPT", instance: i },
                                 !1
                             ),
-                            b = c || h || v || m || M,
+                            [C, H, { isLoading: V }] = (0, a.useGetSetStorage)(
+                                { key: "UNFOLLOW_DAILY_LIMIT", instance: i },
+                                s.FREE_MAX_FOLLOW
+                            ),
+                            [y, I, { isLoading: L }] = (0, a.useGetSetStorage)(
+                                { key: "UNFOLLOW_DAILY_LIMIT_OVERRIDE", instance: i },
+                                null
+                            ),
+                            A = !0 /* ENABLE_DEV_LIMIT_OVERRIDE: private dev build only */,
+                            B = "UNFOLLOW_TRAIL_COUNT" === e ? H : r,
+                            j = (e) => {
+                                let t = Number(e);
+                                return Number.isFinite(t) && t > 0 ? Math.floor(t) : null;
+                            },
+                            F = () => {
+                                if ("UNFOLLOW_TRAIL_COUNT" !== e) return t();
+                                let r = A ? j(y()) : null;
+                                return r ?? j(C()) ?? t();
+                            },
+                            b = c || h || v || m || M || V || L,
                             w = () => u(0);
                         return (
                             (0, l.useEffect)(() => {
@@ -197746,12 +197765,12 @@ ${x}`;
                                 };
                             }, [b]),
                             {
-                                getFreeMaxTrailCount: t,
-                                setFreeMaxTrailCount: r,
+                                getFreeMaxTrailCount: F,
+                                setFreeMaxTrailCount: B,
                                 getTrailCount: n,
                                 setTrailCount: u,
                                 addCount: () => u((e) => e + 1),
-                                isTrailExpired: () => n() >= t(),
+                                isTrailExpired: () => n() >= F(),
                                 getHasConfirmedRating: d,
                                 promptForRating: () => {
                                     alert(
@@ -197760,7 +197779,7 @@ ${x}`;
                                         z(!0);
                                     let e = (0, o.getExtensionReviewUrl)();
                                     chrome.runtime.sendMessage({ action: "openUrl", payload: { url: e } }),
-                                        r(s.REVIEWED_FREE_MAX_FOLLOW),
+                                        B(s.REVIEWED_FREE_MAX_FOLLOW),
                                         p(!0);
                                 },
                                 getHasShowedRatingPrompt: x,
@@ -201793,7 +201812,7 @@ ${x}`;
                                                 l && "hidden"
                                             ),
                                             children: [
-                                                "Free users can unfollow up to 6 users, but you can upgrade to the pro version, which allows unlimited unfollowing.",
+                                                `Free users can unfollow up to ${d()} users/day, but you can upgrade to the pro version, which allows unlimited unfollowing.`,
                                                 (0, a.jsx)("div", {
                                                     children: (0, a.jsx)(s.Button, {
                                                         color: "secondary",

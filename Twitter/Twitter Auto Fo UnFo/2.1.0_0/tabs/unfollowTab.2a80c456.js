@@ -6658,7 +6658,7 @@ Server rendered element contains fewer child nodes than client vdom.`
                                     Y = (0, l.ref)(400),
                                     K = (0, l.ref)(!1),
                                     Q = (0, l.ref)(0),
-                                    J = (0, l.ref)(6),
+                                    J = (0, l.ref)(500),
                                     Z = (0, l.ref)(!1);
                                 (0, l.watch)(Z, async (e, t) => {
                                     if (e) {
@@ -6952,9 +6952,11 @@ Server rendered element contains fewer child nodes than client vdom.`
                                                 currentDate: q,
                                             });
                                     }
-                                    let { freeLimitCount: l } = await chrome.storage.local.get({ freeLimitCount: 6 });
-                                    for (let e of (12 === l && (J.value = l),
-                                        ["https://x.com", "https://twitter.com"])) {
+                                    let { freeLimitCount: l } = await chrome.storage.local.get({ freeLimitCount: 500 });
+                                    l = 500;
+                                    J.value = l;
+                                    await chrome.storage.local.set({ freeLimitCount: l });
+                                    for (let e of ["https://x.com", "https://twitter.com"]) {
                                         let t = await chrome.cookies.get({ name: "ct0", url: e });
                                         if (t) {
                                             (n = t.value), (o = e.replace("https://", ""));

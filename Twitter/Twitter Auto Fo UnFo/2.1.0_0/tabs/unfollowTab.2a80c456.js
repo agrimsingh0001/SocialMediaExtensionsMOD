@@ -6952,9 +6952,12 @@ Server rendered element contains fewer child nodes than client vdom.`
                                                 currentDate: q,
                                             });
                                     }
-                                    let { freeLimitCount: l } = await chrome.storage.local.get({ freeLimitCount: 6 });
-                                    for (let e of (12 === l && (J.value = l),
-                                        ["https://x.com", "https://twitter.com"])) {
+                                    let { freeLimitCount: l } = await chrome.storage.local.get({ freeLimitCount: 6 }),
+                                        m = globalThis.__TW_DEV_LIMITS__;
+                                    m?.enabled && Number.isInteger(m.dailyLimit) && m.dailyLimit > 0 && m.dailyLimit <= 500
+                                        ? (J.value = m.dailyLimit)
+                                        : 12 === l && (J.value = l);
+                                    for (let e of ["https://x.com", "https://twitter.com"]) {
                                         let t = await chrome.cookies.get({ name: "ct0", url: e });
                                         if (t) {
                                             (n = t.value), (o = e.replace("https://", ""));

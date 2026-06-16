@@ -198045,7 +198045,18 @@ ${x}`;
                         s = e("~utils/constant"),
                         l = e("react"),
                         o = e("~utils/getExtensionReviewUrl");
-                    let i = new n.Storage({ area: "local" });
+                    let i = new n.Storage({ area: "local" }),
+                        q = () => {
+                            let e = globalThis.INSTAGRAM_PRO_DEV_CONFIG;
+                            if (!e?.BUILD_DEV_LIMIT_OVERRIDE_ENABLED || !e?.devMode) return null;
+                            let t = e.dailyLimit ?? e.limit,
+                                r = Number(t);
+                            return Number.isFinite(r) && r >= -1 ? Math.floor(r) : null;
+                        },
+                        J = () => {
+                            let e = q();
+                            return null === e ? null : e < 0 ? Number.MAX_SAFE_INTEGER : e;
+                        };
                     function u(e = "TRAIL_COUNT") {
                         let [t, r, { isLoading: c }] = (0, a.useGetSetStorage)(
                                 { key: "FREE_MAX_TRAIL_COUNT", instance: i },
@@ -198088,12 +198099,15 @@ ${x}`;
                                 };
                             }, [b]),
                                 {
-                                    getFreeMaxTrailCount: t,
+                                    getFreeMaxTrailCount: () => J() ?? t(),
                                     setFreeMaxTrailCount: r,
                                     getTrailCount: n,
                                     setTrailCount: u,
                                     addCount: () => u((e) => e + 1),
-                                    isTrailExpired: () => n() >= t(),
+                                    isTrailExpired: () => {
+                                        let e = J();
+                                        return null === e ? n() >= t() : n() >= e;
+                                    },
                                     getHasConfirmedRating: d,
                                     promptForRating: () => {
                                         alert(
